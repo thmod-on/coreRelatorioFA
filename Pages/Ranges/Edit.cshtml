@@ -1,0 +1,45 @@
+﻿@page "{id:int}"
+@model CoreRelatorioFA.Pages.Ranges.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Range</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Range.SprintID" />
+            <div class="form-group">
+                <label asp-for="Range.Name" class="control-label"></label>
+                <input asp-for="Range.Name" class="form-control" />
+                <span asp-validation-for="Range.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Range.StaDate" class="control-label"></label>
+                <input asp-for="Range.StaDate" class="form-control" />
+                <span asp-validation-for="Range.StaDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Range.EndDate" class="control-label"></label>
+                <input asp-for="Range.EndDate" class="form-control" />
+                <span asp-validation-for="Range.EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

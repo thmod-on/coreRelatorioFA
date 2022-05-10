@@ -1,0 +1,54 @@
+﻿@page
+@model CoreRelatorioFA.Pages.Invoices.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Invoicing[0].UstValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Invoicing[0].UstValueIniDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Invoicing[0].UstValueEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Invoicing[0].Contract)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Invoicing) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UstValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UstValueIniDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UstValueEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contract.Sap)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.InvoicingID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.InvoicingID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.InvoicingID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

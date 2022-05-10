@@ -1,0 +1,58 @@
+﻿@page
+@model CoreRelatorioFA.Pages.Ranges.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<form>
+    <p>
+        <select asp-for="RangeName" asp-items="Model.RangeNamesList">
+            <option value="">TODOS</option>
+        </select>
+        Intervalo: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filtrar" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RangeList[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RangeList[0].StaDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RangeList[0].EndDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.RangeList) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StaDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.SprintID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.SprintID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.SprintID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

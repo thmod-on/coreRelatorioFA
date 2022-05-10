@@ -1,0 +1,50 @@
+﻿@page
+@model CoreRelatorioFA.Pages.Invoices.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Invoicing</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Invoicing.InvoicingID" />
+            <div class="form-group">
+                <label asp-for="Invoicing.UstValue" class="control-label"></label>
+                <input asp-for="Invoicing.UstValue" class="form-control" />
+                <span asp-validation-for="Invoicing.UstValue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Invoicing.UstValueIniDate" class="control-label"></label>
+                <input asp-for="Invoicing.UstValueIniDate" class="form-control" />
+                <span asp-validation-for="Invoicing.UstValueIniDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Invoicing.UstValueEndDate" class="control-label"></label>
+                <input asp-for="Invoicing.UstValueEndDate" class="form-control" />
+                <span asp-validation-for="Invoicing.UstValueEndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Invoicing.ContractID" class="control-label"></label>
+                <select asp-for="Invoicing.ContractID" class="form-control" asp-items="ViewBag.ContractID"></select>
+                <span asp-validation-for="Invoicing.ContractID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

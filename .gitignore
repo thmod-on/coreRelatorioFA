@@ -1,0 +1,7 @@
+/Migrations
+*/bin
+*/obj
+*.xml
+*.user
+*.png
+*.jpeg

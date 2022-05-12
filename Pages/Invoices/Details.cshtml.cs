@@ -19,7 +19,7 @@ namespace CoreRelatorioFA.Pages.Invoices
             _context = context;
         }
 
-        public Invoicing Invoicing { get; set; }
+        public Invoice Invoicing { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,7 +29,7 @@ namespace CoreRelatorioFA.Pages.Invoices
             }
 
             Invoicing = await _context.Invoices
-                .Include(i => i.Contract).FirstOrDefaultAsync(m => m.InvoicingID == id);
+                .Include(i => i.Contract).FirstOrDefaultAsync(m => m.InvoiceId == id);
 
             if (Invoicing == null)
             {

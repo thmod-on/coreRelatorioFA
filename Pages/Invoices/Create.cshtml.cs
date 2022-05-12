@@ -26,7 +26,7 @@ namespace CoreRelatorioFA.Pages.Invoices
         }
 
         [BindProperty]
-        public Invoicing Invoicing { get; set; }
+        public Invoice Invoicing { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()

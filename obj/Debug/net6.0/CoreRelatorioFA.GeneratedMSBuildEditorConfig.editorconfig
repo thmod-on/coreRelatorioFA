@@ -83,6 +83,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW52b2ljZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[G:/Fontes/coreRelatorioFA/Pages/Levels/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGV2ZWxzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Fontes/coreRelatorioFA/Pages/Levels/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGV2ZWxzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Fontes/coreRelatorioFA/Pages/Levels/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGV2ZWxzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Fontes/coreRelatorioFA/Pages/Levels/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGV2ZWxzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Fontes/coreRelatorioFA/Pages/Levels/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGV2ZWxzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [G:/Fontes/coreRelatorioFA/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -105,6 +125,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [G:/Fontes/coreRelatorioFA/Pages/Ranges/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmFuZ2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Fontes/coreRelatorioFA/Pages/Roles/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUm9sZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Fontes/coreRelatorioFA/Pages/Roles/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUm9sZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Fontes/coreRelatorioFA/Pages/Roles/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUm9sZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Fontes/coreRelatorioFA/Pages/Roles/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUm9sZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Fontes/coreRelatorioFA/Pages/Roles/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUm9sZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [G:/Fontes/coreRelatorioFA/Pages/Shared/_ValidationScriptsPartial.cshtml]

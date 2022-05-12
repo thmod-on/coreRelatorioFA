@@ -21,13 +21,20 @@ namespace CoreRelatorioFA.Data
 
         public DbSet<Contract> Contracts { get; set; }
 
-        public DbSet<Invoicing> Invoices { get; set; }
+        public DbSet<Invoice> Invoices { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Company>().ToTable("Company");
             modelBuilder.Entity<Contract>().ToTable("Contract");
-            modelBuilder.Entity<Invoicing>().ToTable("Invoicing");
+            modelBuilder.Entity<Invoice>().ToTable("Invoice");
+            modelBuilder.Entity<Level>().ToTable("Level");
+            modelBuilder.Entity<Role>().ToTable("Role");
+            modelBuilder.Entity<Sprint>().ToTable("Sprint");
         }
+
+        public DbSet<CoreRelatorioFA.Models.Role> Role { get; set; }
+
+        public DbSet<CoreRelatorioFA.Models.Level> Level { get; set; }
     }
 }

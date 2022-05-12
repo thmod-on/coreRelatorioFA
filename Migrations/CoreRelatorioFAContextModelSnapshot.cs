@@ -17,18 +17,133 @@ namespace CoreRelatorioFA.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.4")
+                .HasAnnotation("ProductVersion", "6.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("CoreRelatorioFA.Models.Sprint", b =>
+            modelBuilder.Entity("CoreRelatorioFA.Models.Company", b =>
                 {
-                    b.Property<int>("SprintID")
+                    b.Property<int>("CompanyId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SprintID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CompanyId"), 1L, 1);
+
+                    b.Property<string>("CompanyName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("LogoBytes")
+                        .HasColumnType("varbinary(max)");
+
+                    b.HasKey("CompanyId");
+
+                    b.ToTable("Company", (string)null);
+                });
+
+            modelBuilder.Entity("CoreRelatorioFA.Models.Contract", b =>
+                {
+                    b.Property<int>("ContractId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ContractId"), 1L, 1);
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("CompanyID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Sap")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ContractId");
+
+                    b.HasIndex("CompanyID");
+
+                    b.ToTable("Contract", (string)null);
+                });
+
+            modelBuilder.Entity("CoreRelatorioFA.Models.Invoice", b =>
+                {
+                    b.Property<int>("InvoiceId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("InvoiceId"), 1L, 1);
+
+                    b.Property<int>("ContractID")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("UstValue")
+                        .HasColumnType("decimal(9,2)");
+
+                    b.Property<DateTime>("UstValueEndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("UstValueIniDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("InvoiceId");
+
+                    b.HasIndex("ContractID");
+
+                    b.ToTable("Invoice", (string)null);
+                });
+
+            modelBuilder.Entity("CoreRelatorioFA.Models.Level", b =>
+                {
+                    b.Property<int>("LevelId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LevelId"), 1L, 1);
+
+                    b.Property<int>("ContractID")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Factor")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("LevelId");
+
+                    b.HasIndex("ContractID");
+
+                    b.ToTable("Level", (string)null);
+                });
+
+            modelBuilder.Entity("CoreRelatorioFA.Models.Role", b =>
+                {
+                    b.Property<int>("RoleId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RoleId"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.HasKey("RoleId");
+
+                    b.ToTable("Role", (string)null);
+                });
+
+            modelBuilder.Entity("CoreRelatorioFA.Models.Sprint", b =>
+                {
+                    b.Property<int>("SprintId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SprintId"), 1L, 1);
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
@@ -41,9 +156,42 @@ namespace CoreRelatorioFA.Migrations
                     b.Property<DateTime>("StaDate")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("SprintID");
+                    b.HasKey("SprintId");
 
-                    b.ToTable("Sprint");
+                    b.ToTable("Sprint", (string)null);
+                });
+
+            modelBuilder.Entity("CoreRelatorioFA.Models.Contract", b =>
+                {
+                    b.HasOne("CoreRelatorioFA.Models.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Company");
+                });
+
+            modelBuilder.Entity("CoreRelatorioFA.Models.Invoice", b =>
+                {
+                    b.HasOne("CoreRelatorioFA.Models.Contract", "Contract")
+                        .WithMany()
+                        .HasForeignKey("ContractID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Contract");
+                });
+
+            modelBuilder.Entity("CoreRelatorioFA.Models.Level", b =>
+                {
+                    b.HasOne("CoreRelatorioFA.Models.Contract", "Contract")
+                        .WithMany()
+                        .HasForeignKey("ContractID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Contract");
                 });
 #pragma warning restore 612, 618
         }

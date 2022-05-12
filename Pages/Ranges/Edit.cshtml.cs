@@ -31,7 +31,7 @@ namespace CoreRelatorioFA.Pages.Ranges
                 return NotFound();
             }
 
-            Range = await _context.Sprint.FirstOrDefaultAsync(m => m.SprintID == id);
+            Range = await _context.Sprint.FirstOrDefaultAsync(m => m.SprintId == id);
 
             if (Range == null)
             {
@@ -57,7 +57,7 @@ namespace CoreRelatorioFA.Pages.Ranges
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!RangeExists(Range.SprintID))
+                if (!RangeExists(Range.SprintId))
                 {
                     return NotFound();
                 }
@@ -72,7 +72,7 @@ namespace CoreRelatorioFA.Pages.Ranges
 
         private bool RangeExists(int id)
         {
-            return _context.Sprint.Any(e => e.SprintID == id);
+            return _context.Sprint.Any(e => e.SprintId == id);
         }
     }
 }

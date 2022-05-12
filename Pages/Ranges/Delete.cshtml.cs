@@ -30,7 +30,7 @@ namespace CoreRelatorioFA.Pages.Ranges
                 return NotFound();
             }
 
-            Range = await _context.Sprint.FirstOrDefaultAsync(m => m.SprintID == id);
+            Range = await _context.Sprint.FirstOrDefaultAsync(m => m.SprintId == id);
 
             if (Range == null)
             {

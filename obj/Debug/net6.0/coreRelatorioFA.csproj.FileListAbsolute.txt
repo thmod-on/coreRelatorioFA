@@ -9,6 +9,7 @@ G:\Fontes\coreRelatorioFA\bin\Debug\net6.0\CoreRelatorioFA.pdb
 G:\Fontes\coreRelatorioFA\bin\Debug\net6.0\Humanizer.dll
 G:\Fontes\coreRelatorioFA\bin\Debug\net6.0\MessagePack.dll
 G:\Fontes\coreRelatorioFA\bin\Debug\net6.0\MessagePack.Annotations.dll
+G:\Fontes\coreRelatorioFA\bin\Debug\net6.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
 G:\Fontes\coreRelatorioFA\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
 G:\Fontes\coreRelatorioFA\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 G:\Fontes\coreRelatorioFA\bin\Debug\net6.0\Microsoft.Build.Locator.dll
@@ -266,4 +267,3 @@ G:\Fontes\coreRelatorioFA\obj\Debug\net6.0\refint\CoreRelatorioFA.dll
 G:\Fontes\coreRelatorioFA\obj\Debug\net6.0\CoreRelatorioFA.pdb
 G:\Fontes\coreRelatorioFA\obj\Debug\net6.0\CoreRelatorioFA.genruntimeconfig.cache
 G:\Fontes\coreRelatorioFA\obj\Debug\net6.0\ref\CoreRelatorioFA.dll
-G:\Fontes\coreRelatorioFA\bin\Debug\net6.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll

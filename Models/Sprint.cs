@@ -5,7 +5,7 @@ namespace CoreRelatorioFA.Models
 {
     public class Sprint
     {
-        public int SprintID { get; set; }
+        public int SprintId { get; set; }
 
         [StringLength(20, MinimumLength = 3)]
         [RegularExpression(@"^[A-Z0-9 ]*$")]

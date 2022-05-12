@@ -3,10 +3,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoreRelatorioFA.Models
 {
-    public class Invoicing
+    public class Invoice
     {
         [Required]
-        public int InvoicingID { get; set; }
+        public int InvoiceId { get; set; }
         [Display(Name = "Valor da UST (R$)"), Column(TypeName = "decimal(9, 2)")]
         [Required]
         public decimal UstValue { get; set; }

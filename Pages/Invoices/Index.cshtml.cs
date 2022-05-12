@@ -19,7 +19,7 @@ namespace CoreRelatorioFA.Pages.Invoices
             _context = context;
         }
 
-        public IList<Invoicing> Invoicing { get;set; }
+        public IList<Invoice> Invoicing { get;set; }
 
         public async Task OnGetAsync()
         {

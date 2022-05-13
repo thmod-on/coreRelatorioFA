@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO.IsolatedStorage;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,12 +8,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using CoreRelatorioFA.Data;
 using CoreRelatorioFA.Models;
 
-namespace CoreRelatorioFA.Pages.Companies
+namespace CoreRelatorioFA.Pages.Employees
 {
     public class CreateModel : PageModel
     {
         private readonly CoreRelatorioFA.Data.CoreRelatorioFAContext _context;
-        
+
         public CreateModel(CoreRelatorioFA.Data.CoreRelatorioFAContext context)
         {
             _context = context;
@@ -26,35 +25,18 @@ namespace CoreRelatorioFA.Pages.Companies
         }
 
         [BindProperty]
-        public Company Company { get; set; }
-        [BindProperty]
-        public FileViewModel FileUpload { get; set; }
+        public Employee Employee { get; set; }
+        
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
+          if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            //Save images to database
-            using (var memoryStream = new MemoryStream())
-            {
-                await FileUpload.FormFile.CopyToAsync(memoryStream);
-
-                //Upload file if less than 2 MB
-                if (memoryStream.Length < 2097152)
-                {
-                    Company.LogoBytes = memoryStream.ToArray();
-                }
-                else
-                {
-                    ModelState.AddModelError("File", "Arquivo maior que 2 MB");
-                }
-            }
-
-            _context.Companies.Add(Company);
+            _context.Employee.Add(Employee);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

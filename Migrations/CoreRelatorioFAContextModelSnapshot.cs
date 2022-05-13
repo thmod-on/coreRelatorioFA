@@ -67,6 +67,34 @@ namespace CoreRelatorioFA.Migrations
                     b.ToTable("Contract", (string)null);
                 });
 
+            modelBuilder.Entity("CoreRelatorioFA.Models.Employee", b =>
+                {
+                    b.Property<int>("EmployeeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmployeeId"), 1L, 1);
+
+                    b.Property<decimal?>("CPF")
+                        .HasMaxLength(11)
+                        .HasColumnType("decimal(11,0)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal?>("PhoneNumber")
+                        .HasMaxLength(15)
+                        .HasColumnType("decimal(15,0)");
+
+                    b.HasKey("EmployeeId");
+
+                    b.ToTable("Employee", (string)null);
+                });
+
             modelBuilder.Entity("CoreRelatorioFA.Models.Invoice", b =>
                 {
                     b.Property<int>("InvoiceId")

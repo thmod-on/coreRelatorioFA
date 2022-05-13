@@ -7,30 +7,30 @@
 
 <h1>Create</h1>
 
-<h4>Invoicing</h4>
+<h4>Invoice</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Invoicing.UstValue" class="control-label"></label>
-                <input asp-for="Invoicing.UstValue" class="form-control" />
-                <span asp-validation-for="Invoicing.UstValue" class="text-danger"></span>
+                <label asp-for="Invoice.ContractID" class="control-label"></label>
+                <select asp-for="Invoice.ContractID" class ="form-control" asp-items="ViewBag.ContractID"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Invoicing.UstValueIniDate" class="control-label"></label>
-                <input asp-for="Invoicing.UstValueIniDate" class="form-control" />
-                <span asp-validation-for="Invoicing.UstValueIniDate" class="text-danger"></span>
+                <label asp-for="Invoice.UstValue" class="control-label"></label>
+                <input asp-for="Invoice.UstValue" class="form-control" />
+                <span asp-validation-for="Invoice.UstValue" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Invoicing.UstValueEndDate" class="control-label"></label>
-                <input asp-for="Invoicing.UstValueEndDate" class="form-control" />
-                <span asp-validation-for="Invoicing.UstValueEndDate" class="text-danger"></span>
+                <label asp-for="Invoice.UstValueIniDate" class="control-label"></label>
+                <input asp-for="Invoice.UstValueIniDate" class="form-control" />
+                <span asp-validation-for="Invoice.UstValueIniDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Invoicing.ContractID" class="control-label"></label>
-                <select asp-for="Invoicing.ContractID" class ="form-control" asp-items="ViewBag.ContractID"></select>
+                <label asp-for="Invoice.UstValueEndDate" class="control-label"></label>
+                <input asp-for="Invoice.UstValueEndDate" class="form-control" />
+                <span asp-validation-for="Invoice.UstValueEndDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

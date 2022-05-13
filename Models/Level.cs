@@ -14,6 +14,7 @@ namespace CoreRelatorioFA.Models
         [Display(Name = "Fator de ajuste")]
         [Required]
         public decimal Factor { get; set; }
+        [Display(Name = "Contrato")]
         [Required]
         public int ContractID { get; set; }
 

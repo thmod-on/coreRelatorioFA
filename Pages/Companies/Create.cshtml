@@ -11,7 +11,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Company.CompanyName" class="control-label"></label>
@@ -20,7 +20,8 @@
             </div>
             <div class="form-group">
                 <label asp-for="Company.LogoBytes" class="control-label"></label>
-                <input asp-for="Company.LogoBytes" class="form-control" />
+                <!--<input asp-for="Company.LogoBytes" class="form-control" />-->
+                <input asp-for="FileUpload.FormFile" class="form-control" type="file"/>
                 <span asp-validation-for="Company.LogoBytes" class="text-danger"></span>
             </div>
             <div class="form-group">

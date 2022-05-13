@@ -8,7 +8,7 @@ namespace CoreRelatorioFA.Models
         public int SprintId { get; set; }
 
         [StringLength(20, MinimumLength = 3)]
-        [RegularExpression(@"^[A-Z0-9 ]*$")]
+        [RegularExpression(@"^[A-Z0-9 ]*$", ErrorMessage = "O nome da Spint deve atender ao padrão '^[A-Z0-9 ]*$'")]
         [Required]
         public string Name { get; set; } = string.Empty;
         

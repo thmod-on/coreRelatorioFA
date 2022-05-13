@@ -14,22 +14,22 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Invoicing[0].UstValue)
+                @Html.DisplayNameFor(model => model.Invoice[0].UstValue)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Invoicing[0].UstValueIniDate)
+                @Html.DisplayNameFor(model => model.Invoice[0].UstValueIniDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Invoicing[0].UstValueEndDate)
+                @Html.DisplayNameFor(model => model.Invoice[0].UstValueEndDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Invoicing[0].Contract)
+                @Html.DisplayNameFor(model => model.Invoice[0].Contract)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Invoicing) {
+@foreach (var item in Model.Invoice) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.UstValue)

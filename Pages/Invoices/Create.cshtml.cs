@@ -26,7 +26,7 @@ namespace CoreRelatorioFA.Pages.Invoices
         }
 
         [BindProperty]
-        public Invoice Invoicing { get; set; }
+        public Invoice Invoice { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -36,7 +36,7 @@ namespace CoreRelatorioFA.Pages.Invoices
                 return Page();
             }
 
-            _context.Invoices.Add(Invoicing);
+            _context.Invoices.Add(Invoice);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

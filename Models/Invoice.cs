@@ -14,6 +14,7 @@ namespace CoreRelatorioFA.Models
         public DateTime UstValueIniDate { get; set; }
         [Display(Name = "Data final do valor"), DataType(DataType.Date)]
         public DateTime UstValueEndDate { get; set; }
+        [Display(Name = "Contrato")]
         public int ContractID { get; set; }
 
         public Contract Contract { get; set; }

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using CoreRelatorioFA.Data;
 using CoreRelatorioFA.Models;
 
-namespace CoreRelatorioFA.Pages.Invoices
+namespace CoreRelatorioFA.Pages.Employees
 {
     public class EditModel : PageModel
     {
@@ -21,23 +21,21 @@ namespace CoreRelatorioFA.Pages.Invoices
         }
 
         [BindProperty]
-        public Invoice Invoice { get; set; }
+        public Employee Employee { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null)
+            if (id == null || _context.Employee == null)
             {
                 return NotFound();
             }
 
-            Invoice = await _context.Invoices
-                .Include(i => i.Contract).FirstOrDefaultAsync(m => m.InvoiceId == id);
-
-            if (Invoice == null)
+            var employee =  await _context.Employee.FirstOrDefaultAsync(m => m.EmployeeId == id);
+            if (employee == null)
             {
                 return NotFound();
             }
-           ViewData["ContractID"] = new SelectList(_context.Contracts, "ContractId", "Sap");
+            Employee = employee;
             return Page();
         }
 
@@ -50,7 +48,7 @@ namespace CoreRelatorioFA.Pages.Invoices
                 return Page();
             }
 
-            _context.Attach(Invoice).State = EntityState.Modified;
+            _context.Attach(Employee).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +56,7 @@ namespace CoreRelatorioFA.Pages.Invoices
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!InvoiceExists(Invoice.InvoiceId))
+                if (!EmployeeExists(Employee.EmployeeId))
                 {
                     return NotFound();
                 }
@@ -71,9 +69,9 @@ namespace CoreRelatorioFA.Pages.Invoices
             return RedirectToPage("./Index");
         }
 
-        private bool InvoiceExists(int id)
+        private bool EmployeeExists(int id)
         {
-            return _context.Invoices.Any(e => e.InvoiceId == id);
+          return _context.Employee.Any(e => e.EmployeeId == id);
         }
     }
 }

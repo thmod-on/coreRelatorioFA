@@ -1,7 +1,7 @@
+.vs
 /Migrations
-*/bin
-*/obj
-*.xml
+/bin
+/obj
 *.user
 *.png
 *.jpeg

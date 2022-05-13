@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using CoreRelatorioFA.Data;
 using CoreRelatorioFA.Models;
 
-namespace CoreRelatorioFA.Pages.Invoices
+namespace CoreRelatorioFA.Pages.Employees
 {
     public class IndexModel : PageModel
     {
@@ -19,12 +19,14 @@ namespace CoreRelatorioFA.Pages.Invoices
             _context = context;
         }
 
-        public IList<Invoice> Invoice { get;set; }
+        public IList<Employee> Employee { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            Invoice = await _context.Invoices
-                .Include(i => i.Contract).ToListAsync();
+            if (_context.Employee != null)
+            {
+                Employee = await _context.Employee.ToListAsync();
+            }
         }
     }
 }

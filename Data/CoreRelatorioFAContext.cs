@@ -31,10 +31,13 @@ namespace CoreRelatorioFA.Data
             modelBuilder.Entity<Level>().ToTable("Level");
             modelBuilder.Entity<Role>().ToTable("Role");
             modelBuilder.Entity<Sprint>().ToTable("Sprint");
+            modelBuilder.Entity<Employee>().ToTable("Employee");
         }
 
         public DbSet<CoreRelatorioFA.Models.Role> Role { get; set; }
 
         public DbSet<CoreRelatorioFA.Models.Level> Level { get; set; }
+
+        public DbSet<CoreRelatorioFA.Models.Employee> Employee { get; set; }
     }
 }

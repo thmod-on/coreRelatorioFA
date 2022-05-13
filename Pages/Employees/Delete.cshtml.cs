@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using CoreRelatorioFA.Data;
 using CoreRelatorioFA.Models;
 
-namespace CoreRelatorioFA.Pages.Invoices
+namespace CoreRelatorioFA.Pages.Employees
 {
     public class DeleteModel : PageModel
     {
@@ -20,37 +20,40 @@ namespace CoreRelatorioFA.Pages.Invoices
         }
 
         [BindProperty]
-        public Invoice Invoice { get; set; }
+      public Employee Employee { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null)
+            if (id == null || _context.Employee == null)
             {
                 return NotFound();
             }
 
-            Invoice = await _context.Invoices
-                .Include(i => i.Contract).FirstOrDefaultAsync(m => m.InvoiceId == id);
+            var employee = await _context.Employee.FirstOrDefaultAsync(m => m.EmployeeId == id);
 
-            if (Invoice == null)
+            if (employee == null)
             {
                 return NotFound();
+            }
+            else 
+            {
+                Employee = employee;
             }
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
-            if (id == null)
+            if (id == null || _context.Employee == null)
             {
                 return NotFound();
             }
+            var employee = await _context.Employee.FindAsync(id);
 
-            Invoice = await _context.Invoices.FindAsync(id);
-
-            if (Invoice != null)
+            if (employee != null)
             {
-                _context.Invoices.Remove(Invoice);
+                Employee = employee;
+                _context.Employee.Remove(Employee);
                 await _context.SaveChangesAsync();
             }
 

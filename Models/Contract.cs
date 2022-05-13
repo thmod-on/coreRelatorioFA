@@ -11,7 +11,7 @@ namespace CoreRelatorioFA.Models
         public string Sap { get; set; }
         [Display(Name = "Ativo")]
         public bool Active { get; set; }
-
+        [Display(Name = "Empresa")]
         public int CompanyID { get; set; }
 
         public Company Company { get; set; }

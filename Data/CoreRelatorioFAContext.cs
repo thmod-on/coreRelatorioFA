@@ -32,6 +32,7 @@ namespace CoreRelatorioFA.Data
             modelBuilder.Entity<Role>().ToTable("Role");
             modelBuilder.Entity<Sprint>().ToTable("Sprint");
             modelBuilder.Entity<Employee>().ToTable("Employee");
+            modelBuilder.Entity<Team>().ToTable("Team");
         }
 
         public DbSet<CoreRelatorioFA.Models.Role> Role { get; set; }
@@ -39,5 +40,7 @@ namespace CoreRelatorioFA.Data
         public DbSet<CoreRelatorioFA.Models.Level> Level { get; set; }
 
         public DbSet<CoreRelatorioFA.Models.Employee> Employee { get; set; }
+
+        public DbSet<CoreRelatorioFA.Models.Team> Team { get; set; }
     }
 }

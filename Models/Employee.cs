@@ -10,16 +10,15 @@ namespace CoreRelatorioFA.Models
         [Display(Name = "Nome")]
         [Required]
         public string Name { get; set; }
-        
-        [Display(Name = "E-mail")]
+
+        [Display(Name = "E-mail"), RegularExpression(@"^[\w_\.]+@[\w\.-]+\.[\w]{2,3}$", ErrorMessage = "Email inválido")]
         public string Email { get; set; }
         
-        [Column(TypeName = "decimal(11, 0)")]
+        [Column(TypeName = "decimal(11, 0)"), Range(0, 99999999999, ErrorMessage = "Máximo de 11 caracteres")]
         [RegularExpression(@"^[0-9]*$", ErrorMessage = "Favor fornecer apenas números'")]
-        [Range(0, 11, ErrorMessage = "Máximo de 11 caracteres")]
         public decimal? CPF { get; set; }
         
-        [Display(Name = "Telefone"), Column(TypeName = "decimal(15, 0)"), Range(0, 15, ErrorMessage = "Máximo de 15 caracteres")]
+        [Display(Name = "Telefone"), Column(TypeName = "decimal(15, 0)"), Range(0, 999999999999999, ErrorMessage = "Máximo de 15 caracteres")]
         public decimal? PhoneNumber { get; set; }
     }
 }

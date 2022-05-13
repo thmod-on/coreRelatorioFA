@@ -171,6 +171,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[G:/Fontes/coreRelatorioFA/Pages/Teams/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVhbXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Fontes/coreRelatorioFA/Pages/Teams/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVhbXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Fontes/coreRelatorioFA/Pages/Teams/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVhbXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Fontes/coreRelatorioFA/Pages/Teams/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVhbXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Fontes/coreRelatorioFA/Pages/Teams/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVhbXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [G:/Fontes/coreRelatorioFA/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

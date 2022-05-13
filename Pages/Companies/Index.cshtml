@@ -28,8 +28,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CompanyName)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LogoBytes)
+            <td> 
+                @if(item.LogoBytes != null)
+                {
+                    <img src="data:image;base64,@System.Convert.ToBase64String(item.LogoBytes)" width="250" height="100"/>   
+                }
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.CompanyId">Edit</a> |

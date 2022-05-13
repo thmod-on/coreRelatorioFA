@@ -76,7 +76,6 @@ namespace CoreRelatorioFA.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmployeeId"), 1L, 1);
 
                     b.Property<decimal?>("CPF")
-                        .HasMaxLength(11)
                         .HasColumnType("decimal(11,0)");
 
                     b.Property<string>("Email")
@@ -87,7 +86,6 @@ namespace CoreRelatorioFA.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal?>("PhoneNumber")
-                        .HasMaxLength(15)
                         .HasColumnType("decimal(15,0)");
 
                     b.HasKey("EmployeeId");
@@ -187,6 +185,38 @@ namespace CoreRelatorioFA.Migrations
                     b.HasKey("SprintId");
 
                     b.ToTable("Sprint", (string)null);
+                });
+
+            modelBuilder.Entity("CoreRelatorioFA.Models.Team", b =>
+                {
+                    b.Property<int>("TeamId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TeamId"), 1L, 1);
+
+                    b.Property<string>("AreaName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("HeadName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("HeadRole")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TeamId");
+
+                    b.ToTable("Team", (string)null);
                 });
 
             modelBuilder.Entity("CoreRelatorioFA.Models.Contract", b =>
